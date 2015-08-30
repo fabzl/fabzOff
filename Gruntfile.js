@@ -1,10 +1,10 @@
 module.exports = function (grunt) {
 	'use strict';
 
+	var opn = require('opn');
+
 	var options = {
 		pkg: require('./package'), // <%=pkg.name%>
-
-		
 
 		// Global Grunt vars. Edit this file to change vars
 		config : require('./_grunt-configs/config.js')
@@ -12,7 +12,6 @@ module.exports = function (grunt) {
 
 	// Load grunt tasks automatically
 	require('load-grunt-tasks')(grunt, {pattern: ["grunt-*", "chotto"]});
-
 
 	// Load grunt configurations automatically
 	var configs = require('load-grunt-configs')(grunt, options);
@@ -23,15 +22,19 @@ module.exports = function (grunt) {
 
 	/**
 	 * Available tasks:
-	 * grunt            : Alias for 'serve' task, below
+	 * grunt            : Alias for 'serve' task, below (the default task)
 	 * grunt serve      : watch js, images & scss and run a local server
+	 * grunt start      : Opens the post-install setup checklist on the Kickoff site
 	 * grunt watch      : run sass:kickoff, uglify and livereload
 	 * grunt dev        : run uglify, sass:kickoff & autoprefixer:kickoff
 	 * grunt deploy     : run jshint, uglify, sass:kickoff and csso
 	 * grunt styleguide : watch js & scss, run a local server for editing the styleguide
+	 * grunt images     : compress all non-grunticon images & then run `grunt icons`
 	 * grunt icons      : generate the icons. uses svgmin and grunticon
-	 * grunt checks     : run jshint & scsslint
+	 * grunt checks     : run jshint, scsslint and html validator
+	 * grunt travis     : used by travis ci only
 	 */
+
 
 	/**
 	 * GRUNT * Alias for 'serve' task, below
@@ -44,13 +47,24 @@ module.exports = function (grunt) {
 	 * run browserSync and watch
 	 */
 	grunt.registerTask('serve', [
+		'shimly',
 		'compileJS',
 		'compileCSS',
 		'clean:tempCSS',
-		'images','copy:modernizr',
+		'copy:modernizr',
+		'images',
 		'browserSync:serve',
 		'watch'
 	]);
+
+
+	/**
+	 * GRUNT START
+	 * Opens the post-install setup checklist on the Kickoff site
+	 */
+	grunt.registerTask('start', function() {
+		opn('http://trykickoff.github.io/learn/checklist.html');
+	});
 
 
 	/**
@@ -58,23 +72,27 @@ module.exports = function (grunt) {
 	 * run uglify, sass:kickoff & autoprefixer:kickoff
 	 */
 	grunt.registerTask('dev', [
+		'shimly',
 		'compileJS',
 		'compileCSS',
 		'clean:tempCSS',
-		'images','copy:modernizr'
+		'copy:modernizr',
+		'images'
 	]);
 
 
 	/**
 	 * GRUNT DEPLOY * A task for your production environment
-	 * run jshint, uglify and sass:production
+	 * run uglify, sass, autoprefixer and csso
 	 */
 	grunt.registerTask('deploy', [
+		'shimly',
 		'compileJS',
 		'compileCSS',
 		'csso',
 		'clean:tempCSS',
-		'images','copy:modernizr'
+		'copy:modernizr',
+		'images'
 	]);
 
 
@@ -82,10 +100,11 @@ module.exports = function (grunt) {
 	 * GRUNT STYLEGUIDE * A task to view the styleguide
 	 */
 	grunt.registerTask('styleguide', [
+		'shimly',
 		'compileJS',
 		'compileCSS',
 		'clean:tempCSS',
-		'images','copy:modernizr',
+		'images',
 		'browserSync:styleguide',
 		'watch'
 	]);
@@ -95,18 +114,17 @@ module.exports = function (grunt) {
 	 * GRUNT IMAGES * A task to compress all non-grunticon images
 	 */
 	grunt.registerTask('images', [
-		'imagemin:images',
+		'newer:imagemin:images',
 		'icons'
 	]);
 
 
 	/**
 	 * GRUNT ICONS * A task to create all icons using grunticon
-	 * run clean, svgmin and grunticon
 	 */
 	grunt.registerTask('icons', [
 		'clean:icons',
-		'imagemin:grunticon',
+		'newer:imagemin:grunticon',
 		'grunticon'
 	]);
 
@@ -123,14 +141,22 @@ module.exports = function (grunt) {
 
 
 	/**
-	 * Utility tasks
+	 * Travis CI to test build
 	 */
-	// Compile JS
-
-	grunt.registerTask('compileJS', [
-		'browserify:dev'
+	grunt.registerTask('travis', [
+		'jshint:project',
+		'uglify',
+		'sass:kickoff'
 	]);
 
+	/**
+	 * Utility classes
+	 */
+	// Compile JS
+	grunt.registerTask('compileJS', [
+		'chotto:js',
+		'uglify',
+	]);
 
 	// Compile CSS
 	grunt.registerTask('compileCSS', [

@@ -48,7 +48,6 @@ module.exports.tasks = {
 	},
 
 
-
 	/**
 	 * Grunt Validation
 	 * https://github.com/praveenvijayan/grunt-html-validation
@@ -65,10 +64,9 @@ module.exports.tasks = {
 			relaxerror: ['A meta element with an http-equiv attribute whose value is X-UA-Compatible must have a content attribute with the value IE=edge.']
 		},
 		files: {
-			src: [
-				'**/*.html',
-				'!*/dist/img/**/*.html',
-				'!node_modules/**/*.html']
+				src: ['**/*.html',
+							'!*/dist/img/**/*.html',
+							'!node_modules/**/*.html']
 		}
 	}
 };

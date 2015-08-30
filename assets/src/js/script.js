@@ -1,30 +1,66 @@
-/*	Author: Fabz
-		Fabzoff
-*/
+/**
+ * Author:
+ * Fabz
+ */
 
-// --------------------------------------------- //
-// DEFINE GLOBAL LIBS                            //
-// --------------------------------------------- //
-window.jQuery = window.$ = require('../../../node_modules/jquery/dist/jquery.js');
+// Create a closure to maintain scope of the '$' and FBZ (Kickoff)
+;(function(FBZ, $) {
 
+	$(function() {
+		// Any globals go here in CAPS (but avoid if possible)
 
-// force compilation of global libs that don't return a value.
-require("./helpers/log");
+		// follow a singleton pattern
+		// (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
 
+		FBZ.Config.init();
 
-//initialise FBZ object
-var FBZ = {};
+	});// END DOC READY
+	FBZ.model = {
+		// add your data here 
+		windowH	: FBZ.control.getHeight(FBZ.dom.$stage),
+		windowW	: FBZ.control.getWidth(FBZ.dom.$stage),
+		stageH	: window.innerHeight,
+		stageW	: window.innerWidth,
+	},
 
-FBZ.Config = {
+	FBZ.view = {
 
-	init : function () {
-		console.debug('Kickoff is running');
+		// add dom elements here
+		$stage 		:$(window),
+		$header		:$('header'),
+		$container	:$('container'),
+		$footer		:$('footer')
+	},
 
-		// Example module include
-		FBZ.UI = require('./modules/UI');
-		FBZ.UI.init();
-	}
-};
+	FBZ.control = {
+		// add function here
+		init : function () {
+			console.debug('Kickoff is running');
+		},
 
+		getHeight : function (obj) {
 
-KO.Config.init();
+			var value = obj.height();
+			return value;
+		},
+
+		getWidth : function(obj) {
+
+			var value = obj.width();
+			return value;
+		},
+	};
+	// Example module
+	/*
+	FBZ.MyExampleModule = {
+		init : function () {
+			FBZ.MyExampleModule.setupEvents();
+		},
+
+		setupEvents : function () {
+			//do some more stuff in here
+		}
+	};
+	*/
+
+})(window.FBZ = window.FBZ || {}, jQuery);

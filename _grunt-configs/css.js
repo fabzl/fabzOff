@@ -3,7 +3,7 @@ module.exports.tasks = {
 	/**
 	 * Sass compilation using grunt-sass
 	 * https://github.com/sindresorhus/grunt-sass
-	 * Includes <%=config.css.distFile%>.scss by default
+	 * Includes kickoff.scss and kickoff-old-ie.scss by default
 	 */
 	sass: {
 		kickoff: {
@@ -13,14 +13,16 @@ module.exports.tasks = {
 				sourceMap : true
 			},
 			files: {
-				'<%=config.tempDir%>/css/<%=config.css.distFile%>.css' : '<%=config.css.scssDir%>/kickoff.scss'
+				'<%=config.tempDir%>/css/<%=config.css.distFile%>.css'       : '<%=config.css.scssDir%>/kickoff.scss',
+				// Remove the line below if you are supporting <IE9
+				'<%=config.tempDir%>/css/<%=config.css.distFile%>-old-ie.css': '<%=config.css.scssDir%>/kickoff-old-ie.scss'
 			}
 		},
 
 		styleguide: {
 			options: {
 				outputStyle: 'compressed',
-				precision : 10
+				precision : 10,
 			},
 			files: {
 				'<%=config.tempDir%>/css/styleguide.css' : '<%=config.css.scssDir%>/styleguide.scss'
@@ -32,7 +34,7 @@ module.exports.tasks = {
 	/**
 	 * Autoprefixer
 	 * https://github.com/nDmitry/grunt-autoprefixer
-	 * https://github.com/ai/autoprefixer
+	 * https://github.com/postcss/autoprefixer
 	 * Auto prefixes your CSS using caniuse data
 	 */
 	autoprefixer: {
@@ -61,7 +63,9 @@ module.exports.tasks = {
 				restructure: false //turns structural optimisations off as can mess up fallbacks http://bem.info/tools/optimizers/csso/description/
 			},
 			files: {
-				'<%=config.css.distDir%>/<%=config.css.distFile%>.css'       : '<%=config.css.distDir%>/<%=config.css.distFile%>.css'
+				'<%=config.css.distDir%>/<%=config.css.distFile%>.css'       : '<%=config.css.distDir%>/<%=config.css.distFile%>.css',
+				// Remove the line below if you are supporting <IE9
+				'<%=config.css.distDir%>/<%=config.css.distFile%>-old-ie.css': '<%=config.css.distDir%>/<%=config.css.distFile%>-old-ie.css'
 			},
 		}
 	}

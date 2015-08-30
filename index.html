@@ -1,18 +1,71 @@
 <!DOCTYPE html>
-<html class="no-js">
 	<head>
+
+<!-- find and replace all this and delete this 
+
+{page title} 
+{twitter-username}
+{page title}
+{page description}
+{share image}
+{page url}
+{content}
+
+	// -->
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Fabzoff</title>
+		<title>{page title}</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
-		<!-- Built with Kickoff - trykickoff.github.io -->
+		<link rel="stylesheet" href="/assets/dist/css/kickoff.css">
 
-		<link rel="stylesheet" href="/assets/dist/css/fabzoff.css">
+		<meta name="application-name" content="{content}">
 
-		<!-- For mobile icons & social metatags etc, see http://trykickoff.github.io/learn/html.html#socialmeta
-		-->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+		<!-- Apple iOS -->
+		<meta name="apple-mobile-web-app-title" content="{content}">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+
+
+		<!-- Twitter - more info at https://dev.twitter.com/cards/overview -->
+		<meta name="twitter:site" content="@{twitter-username}"> <!-- e.g. @TryKickoff -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="{page title}" />
+		<meta name="twitter:description" content="{page description}" />
+		<meta name="twitter:image" content="{share image}" />
+		<meta name="twitter:url" content="{page url}" />
+
+		<!-- Open Graph data - more info at http://ogp.me/ -->
+		<meta property="og:title" content="{page title}" />
+		<meta property="og:description" content="{page description}" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="{page url}" />
+		<meta property="og:image" content="{share image}" />
+
+		<!-- Open Search - include this if you have search on your site
+		     More info at http://www.opensearch.org/Home
+		     Examples at:
+		     * https://uk.thebar.com/osd.xml
+		     * https://uk.thebar.com/opensearch.xml
+		 -->
+		<link rel="search" type="application/opensearchdescription+xml" href="{page url}/osd.xml" title="{page title}">
+		<link rel="search" type="application/opensearchdescription+xml" href="{page url}/opensearch.xml" title="{page title}">
+
+
 		<!-- Grunticon SVG detection script. http://github.com/filamentgroup/
 				 Remove if not using Grunticon. -->
 		<script>
@@ -25,21 +78,19 @@
 		<script src="/assets/dist/js/libs/modernizr.min.js"></script>
 	</head>
 	<body>
-		<div class="skipToContent">
-			<a href="#mainContent" class="btn btn--primary">Skip to main content</a>
-		</div>
 
 		<header class="masthead" role="banner">
 
 		</header>
 
 
-		<div id="mainContent" class="l-container" role="main">
+		<div id="mainContent" class="container" role="main">
 
-		</div><!-- Close .l-container -->
+		</div><!-- Close container -->
+			<footer >
+			</footer>
 
-
-		<!-- JavaScript at the bottom for fast page loading -->
+		<!-- JavaScript -->
 		<script src="/assets/dist/js/script.js"></script>
 
 		<script>

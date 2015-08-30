@@ -9,24 +9,20 @@ module.exports.tasks = {
 		serve: {
 			bsFiles: {
 				src: [
-					'<%=config.css.distDir%>/*.css',
-					'<%=config.js.distDir%>/*.js',
+					'<%=config.distDir%>/**/*.*',
 					'**/*.html'
 				]
 			},
 			options: {
 				watchTask: true,
-				server: {
-					baseDir: './'
-				}
+				server: './'
 			}
 		},
-
 
 		styleguide: {
 			bsFiles: {
 				src: [
-					'<%= config.distDir%>/**/*.*',
+					'<%=config.distDir%>/**/*.*',
 					'*.html'
 				]
 			},

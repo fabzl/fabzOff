@@ -8,6 +8,10 @@ assets/dist/**/*
 assets/temp/**/*
 **/*.map
 
+# PSDs
+*.psd
+*.psb
+*.tiff
 
 # CSS & Sass
 # css/*.css
