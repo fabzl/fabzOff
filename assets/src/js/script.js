@@ -12,16 +12,17 @@
 		// follow a singleton pattern
 		// (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
 
-		FBZ.Config.init();
+		FBZ.control.init();
 
 	});// END DOC READY
+	
 	FBZ.model = {
 		// add your data here 
-		windowH	: FBZ.control.getHeight(FBZ.dom.$stage),
-		windowW	: FBZ.control.getWidth(FBZ.dom.$stage),
+		windowH	: 0,
+		windowW	: 0,
 		stageH	: window.innerHeight,
 		stageW	: window.innerWidth,
-	},
+	};
 
 	FBZ.view = {
 
@@ -30,13 +31,14 @@
 		$header		:$('header'),
 		$container	:$('container'),
 		$footer		:$('footer')
-	},
+	};
 
 	FBZ.control = {
 		// add function here
 		init : function () {
 			console.debug('Kickoff is running');
 		},
+
 
 		getHeight : function (obj) {
 
@@ -49,6 +51,13 @@
 			var value = obj.width();
 			return value;
 		},
+		defineStage : function ( ) { 
+
+			FBZ.model.stageH = FBZ.control.getHeight(FBZ.view.$stage);
+			FBZ.model.stageW = FBZ.control.getWidth(FBZ.view.$stage);
+		}
+
+		
 	};
 	// Example module
 	/*
