@@ -1,10 +1,27 @@
 module.exports.tasks = {
 
+
+
+	'ftp-deploy': {
+			  build: {
+			    auth: {
+			      host: 'server.com',
+			      port: 21,
+			      authKey: 'key1'
+			    },
+			    src: '<%=config.distDir%>',
+			    dest: '/html/uploadTe',
+			    exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'path/to/dist/tmp']
+			  }
+		},
+
 	/**
 	 * browserSync
 	 * http://www.browsersync.io/docs/options/
 	 * http://www.browsersync.io/docs/grunt/
 	 */
+
+
 	browserSync: {
 		serve: {
 			bsFiles: {
