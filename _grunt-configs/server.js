@@ -1,6 +1,9 @@
 module.exports.tasks = {
 
-
+	/**
+	 * ftp deploy 
+	 * https://www.npmjs.com/package/grunt-ftp-deploy
+	 */
 
 	'ftp-deploy': {
 			  build: {
@@ -10,8 +13,8 @@ module.exports.tasks = {
 			      authKey: 'key1'
 			    },
 			    src: '<%=config.distDir%>',
-			    dest: '/html/uploadTe',
-			    exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'path/to/dist/tmp']
+			    dest: '/html/uploadTest/',
+			    exclusions: ['<%=config.distDir%>/**/.DS_Store', '<%=config.distDir%>/**/Thumbs.db', 'path/to/dist/tmp']
 			  }
 		},
 
