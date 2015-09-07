@@ -34,9 +34,7 @@ module.exports = function (grunt) {
 	 * grunt checks     : run jshint, scsslint and html validator
 	 * grunt travis     : used by travis ci only
 	 */
-
-
-		
+	
 
 
 	/**

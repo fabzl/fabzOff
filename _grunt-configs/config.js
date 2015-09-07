@@ -51,6 +51,8 @@ module.exports = {
 			'./node_modules/swiftclick/js/libs/swiftclick.js',
 			'./node_modules/cookies-js/dist/cookies.js',
 
+			'<%=config.srcDir%>/js/libs/picturefill.js',
+			'<%=config.srcDir%>/js/libs/skrollr.js',
 			'<%=config.srcDir%>/js/script.js'
 		]
 	},

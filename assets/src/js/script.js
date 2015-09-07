@@ -3,6 +3,9 @@
  * Fabz
  */
 
+// require("./libs/skrollr");
+// require("./libs/picturefill");
+
 // Create a closure to maintain scope of the '$' and FBZ (Kickoff)
 ;(function(FBZ, $) {
 
@@ -18,10 +21,13 @@
 	
 	FBZ.model = {
 		// add your data here 
-		windowH	: 0,
+		
+		windowH	: 0, //browser screen 
 		windowW	: 0,
-		stageH	: window.innerHeight,
+
+		stageH	: window.innerHeight, //total document size
 		stageW	: window.innerWidth,
+		
 	};
 
 	FBZ.view = {
@@ -36,7 +42,7 @@
 	FBZ.control = {
 		// add function here
 		init : function () {
-			console.debug('Kickoff is running');
+			console.debug('FabzOff is running');
 		},
 
 
