@@ -1,6 +1,228 @@
-/**
- * Global app/site styles
- */
-body {
-	background-color: $color-bg;
+
+// for responsive stuff use as it follows
+
+// @include respond-min($bp-narrow) {
+//  }
+// @include respond-min($bp-mid) {
+//  }
+// @include respond-min($bp-wide) {
+//  }
+// @include respond-min($bp-huge) {
+//  }
+
+// $bp-narrow            : 400;  // Set in px
+// $bp-mid               : 768;  // Set in px
+// $bp-wide              : 992;  // Set in px
+// $bp-huge              : 1600; // Set in px
+ 
+/// footer
+ 
+footer {
+
+	// UNCOMENT THIS TO MAKE THE FOOTER VISIBLE
+	display:none;
+
+	text-align: center;
+	width: 100%;
+	overflow:visible;
+	position:relative;
+
+}
+
+body, html {
+	margin: 0;
+	overflow: hidden;
+	transition: opacity 400ms;
+	width:100%;
+
+}
+
+
+
+/// header 
+
+header {
+
+	border:1px black solid;
+	position:absolute;
+	top:0;
+	height: 98px;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+}
+
+
+.logo-header {
+	width: 100px;
+}
+
+
+
+// for mutilang support
+.menu-lang { 
+
+	position:fixed;
+	top:24px;
+	right:20px;
+	border-radius: 2px;
+	transition: all 700ms ease-in-out;
+
+	&:before { 
+
+		border: 1px $color-primary solid;
+	}
+}
+
+
+.lang-btn {
+
+	font-size: .8em;
+	color:$color-secondary;
+	cursor:pointer;
+	padding:8px;
+
+	display: inline-block;
+	transition: all 300ms ease-in-out;
+	max-width:50px;
+
+	&.active {
+		color:$color-primary;
+		border: 1px $color-primary solid;
+
+	}
+	&:hover {
+		color:$color-secondary;
+	}
+}
+
+.data-translatable { 
+	display:none;
+}
+
+
+/// loader 
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  top:50%;
+ }
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: '';
+}
+.loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: black;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  transform-origin: 5.2em 5.1em;
+  animation: load2 2s infinite ease 1.5s;
+}
+.loader {
+
+  color: $color-highlight;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  box-shadow: inset 0 0 0 1em;
+  transform: translateZ(0)translateY(-100%);
+
+}
+
+.loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: $color-primary;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 5.1em;
+  transform-origin: 0px 5.1em;
+  animation: load2 2s infinite ease;
+}
+@-webkit-keyframes load2 {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(360deg);
+  }
+}
+@keyframes load2 {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(360deg);
+  }
+}
+
+
+.curtain { 
+
+	background-color: $color-primary;
+	width:100%;
+	position:absolute;
+	height:100%;
+	z-index:1000;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	opacity:1;
+	transition:none;
+}
+
+// helpers 
+
+
+.is-hidden { 
+
+	display: none;
+	opacity:0;
+}
+
+.is-fading-out { 
+
+	transition: all 700ms ease-out;
+	opacity:0;
+}
+.is-fading-in { 
+
+	animation: animFadeIn 700ms ease-out;
+	animation-fill-mode: forwards;
+	backface-visibility: hidden;
+}
+
+/*   fade in */
+@keyframes animFadeIn {
+	0%   {opacity:0;  }
+	100% {opacity:1; }
+}
+
+/*   fade in */
+@keyframes animFadeOut {
+	0%   {opacity:1;  }
+	100% {opacity:0; }
+}
+
+
+@keyframes fadeOut {
+	from {opacity:1;}
+	to {opacity:0;
+	}
+}
+
+@keyframes fadeIn {
+	from {opacity:0;}
+	to {opacity:1;
+	}
 }

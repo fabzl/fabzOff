@@ -3,19 +3,19 @@ module.exports.tasks = {
 	/**
 	 * Sass compilation using grunt-sass
 	 * https://github.com/sindresorhus/grunt-sass
-	 * Includes kickoff.scss and kickoff-old-ie.scss by default
+	 * Includes fabzoff.scss and fabzoff-old-ie.scss by default
 	 */
 	sass: {
-		kickoff: {
+		fabzoff: {
 			options: {
 				outputStyle: 'nested',
 				precision : 10,
 				sourceMap : true
 			},
 			files: {
-				'<%=config.tempDir%>/css/<%=config.css.distFile%>.css'       : '<%=config.css.scssDir%>/kickoff.scss',
+				'<%=config.tempDir%>/css/<%=config.css.distFile%>.css'       : '<%=config.css.scssDir%>/fabzoff.scss',
 				// Remove the line below if you are supporting <IE9
-				'<%=config.tempDir%>/css/<%=config.css.distFile%>-old-ie.css': '<%=config.css.scssDir%>/kickoff-old-ie.scss'
+				'<%=config.tempDir%>/css/<%=config.css.distFile%>-old-ie.css': '<%=config.css.scssDir%>/fabzoff-old-ie.scss'
 			}
 		},
 
@@ -43,7 +43,7 @@ module.exports.tasks = {
 			map: true
 		},
 
-		kickoff: {
+		fabzoff: {
 			expand: true,
 			flatten: true,
 			src: '<%=config.tempDir%>/css/*.css',

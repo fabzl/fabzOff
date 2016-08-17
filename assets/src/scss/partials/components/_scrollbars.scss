@@ -5,10 +5,29 @@
 ::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
-	background-color: darken($color-bg, 10%);
+	border: 2px solid white;
+	// background-color: darken($color-bg, 10%);
+
+	// display:none;
+
+	// @include respond-min($bp-wide) {
+	// display:block;
+	// }
+	
+
 }
 
 ::-webkit-scrollbar-thumb {
-	background: darken($color-bg, 40%);
+	 background: white; // arken($color-bg, 40%);
 	cursor: pointer;
+	border: 1px solid white;
+	width: 10px;
+	// display:none;
+
+	// // @include respond-min($bp-wide) {
+	// // display:block;
+	// // }
+	
+
+
 }

@@ -4,6 +4,14 @@ module.exports.tasks = {
 	 * ftp deploy 
 	 * https://www.npmjs.com/package/grunt-ftp-deploy
 	 */
+	bake: {
+	  build: {
+	    files: {
+			'index.html' : 'index_base.html',
+			'section/index.html' : 'section/index_section.html'
+			}
+		}
+	},
 
 	'ftp-deploy': {
 			  build: {

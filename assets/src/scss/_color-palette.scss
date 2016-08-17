@@ -12,26 +12,29 @@ $pink                         : #ff708e;
 $purple                       : #8e44ad;
 $gray                         : #95a5a6;
 
+
 // Color Scheme
-$color-primary                : $green;
-$color-secondary              : $yellow;
-$color-highlight              : $red;
+$color-primary                : black;
+
+$color-secondary              : grey;
+$color-highlight              : white;
+
 
 // Common colors
-$color-text                   : #444;
-$color-bg                     : #f1f1f1;
+$color-text                   : $color-primary;
+$color-bg                     : white;
 $color-border                 : #ddd;
 
 // Text Selection
 $color-selection              : #fff;
-$color-selection-bg           : $color-primary;
+$color-selection-bg           :$color-secondary;
 
 
 // Links
-$color-link-default           : $color-primary;
-$color-link-visited           : $color-primary;
-$color-link-hover             : darken($color-primary, 20%);
-$color-link-active            : darken($color-primary, 20%);
+$color-link-default           :$color-secondary;
+$color-link-visited           :$color-secondary;
+$color-link-hover             : darken($color-secondary, 20%);
+$color-link-active            : darken($color-secondary, 20%);
 
 
 // <hr> border color

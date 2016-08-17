@@ -27,7 +27,6 @@ module.exports.tasks = {
 		}
 	},
 
-
 	/**
 	 * Shimly
 	 * https://github.com/nicbell/shimly

@@ -18,6 +18,132 @@
  * http://lamb.cc/typograph/
  *
  */
+/// fonts  
+
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../fonts/Roboto-Bold.woff2?v=1.1.0") format("woff2"), url("../../fonts/Roboto-Bold.woff?v=1.1.0") format("woff"), url("./fonts/Bold/Roboto-Bold.ttf?v=1.1.0") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+
+  }
+
+
+
+
+
+@font-face {
+    font-family: 'aldrichregular';
+    src: url('../../fonts/aldrich-regular-webfont.eot');
+    src: url('../../fonts/aldrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/aldrich-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/aldrich-regular-webfont.woff') format('woff'),
+         url('../../fonts/aldrich-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'anonymous_proregular';
+    src: url('../../fonts/anonymouspro-regular-webfont.eot');
+    src: url('../../fonts/anonymouspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/anonymouspro-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/anonymouspro-regular-webfont.woff') format('woff'),
+         url('../../anonymouspro-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+ /// icon moon
+
+
+
+ @font-face {
+    font-family: 'icomoon';
+    src:    url('../../fonts/icomoon.eot?nh14gc');
+    src:    url('../../fonts/icomoon.eot?nh14gc#iefix') format('embedded-opentype'),
+        url('../../fonts/icomoon.ttf?nh14gc') format('truetype'),
+        url('../../fonts/icomoon.woff?nh14gc') format('woff'),
+        url('../../fonts/icomoon.svg?nh14gc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mobile2:before {
+    content: "\e900";
+}
+.icon-paperplane:before {
+    content: "\e901";
+}
+.icon-bolt:before {
+    content: "\e902";
+}
+.icon-plus:before {
+    content: "\e903";
+}
+.icon-cross:before {
+    content: "\e904";
+}
+.icon-list:before {
+    content: "\e905";
+}
+.icon-arrow-left:before {
+    content: "\e906";
+}
+.icon-arrow-down:before {
+    content: "\e907";
+}
+.icon-arrow-up:before {
+    content: "\e908";
+}
+.icon-arrow-right:before {
+    content: "\e909";
+}
+.icon-cc:before {
+    content: "\e90a";
+}
+.icon-github:before {
+    content: "\e90b";
+}
+.icon-vimeo:before {
+    content: "\e90c";
+}
+.icon-twitter:before {
+    content: "\e90d";
+}
+.icon-facebook:before {
+    content: "\e90e";
+}
+.icon-tumblr:before {
+    content: "\e90f";
+}
+.icon-paypal:before {
+    content: "\e910";
+}
+
+
 
 html {
 	font-size: $font-size-base-narrow-px;
@@ -56,7 +182,7 @@ p {
 	font-family: $font-family-base;
 	@include font-size($type-base);
 	margin-top: 0;
-	margin-bottom: $baseline;
+	margin-bottom: 3px;
 
 	// Measure - ideally about 65 chars per line
 	// =========================================

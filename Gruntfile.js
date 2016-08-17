@@ -53,10 +53,14 @@ module.exports = function (grunt) {
 		'compileCSS',
 		'clean:tempCSS',
 		'copy:modernizr',
-		'images',
+		//'images',
+		'bake:build',
 		'browserSync:serve',
 		'watch'
+
 	]);
+
+
 
 
 	/**
@@ -105,7 +109,7 @@ module.exports = function (grunt) {
 		'compileJS',
 		'compileCSS',
 		'clean:tempCSS',
-		'images',
+		// 'images',
 		'browserSync:styleguide',
 		'watch'
 	]);
@@ -164,4 +168,6 @@ module.exports = function (grunt) {
 		'sass',
 		'autoprefixer'
 	]);
+
+
 };

@@ -208,8 +208,8 @@ code {
 
 	&:after {
 		display: block;
-		@extend .interfaceType;
-		@extend .interfaceType-subtle;
+		@extend .interfaceType !optional;
+		@extend .interfaceType-subtle !optional;
 		@include font-size(16);
 		margin-top: 5px;
 		border-top: 1px solid #ddd;

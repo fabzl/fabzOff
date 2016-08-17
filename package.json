@@ -3,7 +3,7 @@
   "title": "Kickoff",
   "description": "A lightweight front-end framework for creating scalable, responsive sites",
   "version": "5.0.0",
-  "homepage": "http://trykickoff.github.io",
+  "homepage": "http://fabz.tv",
   "authors": [
     {
       "name": "Fabian Andrade",
@@ -15,7 +15,7 @@
     "url": "git://github.com/fabzl/fabzOff.git"
   },
   "bugs": {
-    "url": "https://github.com/trykickoff/kickoff/issues"
+    "url": "https://github.com/fabzl/fabzOff/issues"
   },
   "license": "MIT",
   "engines": {
@@ -25,9 +25,11 @@
   "devDependencies": {
     "chotto": "^0.1.0",
     "cookies-js": "^1.2.1",
+    "dom-i18n": "^1.1.1",
     "glob": "^5.0.5",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^3.0.0",
+    "grunt-bake": "^1.6.3",
     "grunt-browser-sync": "^2.1.3",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
@@ -47,9 +49,11 @@
     "imagemin-gifsicle": "^4.1.0",
     "imagemin-mozjpeg": "^5.1.0",
     "imagemin-pngquant": "^4.1.0",
+    "install": "^0.8.1",
     "jquery": "^1.11.1",
     "load-grunt-configs": "^0.4.3",
     "load-grunt-tasks": "^3.1.0",
+    "npm": "^3.9.3",
     "opn": "^1.0.2",
     "swiftclick": "^1.1.5",
     "trak.js": "^0.5.0"

@@ -10,7 +10,6 @@ module.exports = {
 	distDir : './assets/dist', // <%=config.distDir%>
 	tempDir : './assets/temp', // <%=config.tempDir%>
 
-
 	// CSS-related Grunt vars
 	css : {
 		scssDir  : '<%=config.srcDir%>/scss', // <%=config.css.scssDir%>
@@ -18,13 +17,12 @@ module.exports = {
 
 		// Renaming this changes the name of the generated CSS file
 		// Make sure you update your template file
-		distFile : 'kickoff', // <%=config.css.distFile%>
+		distFile : 'fabzoff', // <%=config.css.distFile%>
 
 		// We are supporting the last 2 browsers, any browsers with >5% market share,
 		// and ensuring we support IE8+ with prefixes
 		autoprefixer : ['> 5%', 'last 2 versions', 'firefox > 3.6', 'ie > 7'] // <%=config.css.autoprefixer%>
 	},
-
 
 	// Javascript-related Grunt vars
 	js : {
@@ -40,8 +38,8 @@ module.exports = {
 		// <%=config.js.fileList%>
 		fileList : [
 			// if you would like to remove jQuery from your concatenated JS, comment out the line below
-			'./node_modules/jquery/dist/jquery.js',
-
+		//	'./node_modules/jquery/dist/jquery.js',
+			 '<%=config.srcDir%>/js/libs/jquery-1.9.1.js',
 			// if you would like some basic JS shims (when not using jQuery),
 			// uncomment the line below to compile Shimly output
 			//'<%=config.srcDir%>/js/helpers/shims.js',
@@ -50,13 +48,15 @@ module.exports = {
 			'./node_modules/trak.js/dist/trak.js',
 			'./node_modules/swiftclick/js/libs/swiftclick.js',
 			'./node_modules/cookies-js/dist/cookies.js',
-
+			'./node_modules/dom-i18n/src/dom-i18n.js',
 			'<%=config.srcDir%>/js/libs/picturefill.js',
-			'<%=config.srcDir%>/js/libs/skrollr.js',
-			'<%=config.srcDir%>/js/script.js'
+			'<%=config.srcDir%>/js/libs/tabletop.js',
+			'<%=config.srcDir%>/js/libs/tweenlite.js',
+			'<%=config.srcDir%>/js/script.js',
+
+
 		]
 	},
-
 
 	// Image-related Grunt vars
 	img : {
@@ -65,7 +65,10 @@ module.exports = {
 		grunticonDir : '<%=config.srcDir%>/grunticon' // <%=config.img.grunticonDir%>
 	},
 
-
+	bake: {
+	  files: ['<%= config.srcDir %>/includes/**'],
+	  tasks: ['bake:build']
+	},
 	// Testing-related Grunt vars
 	// Add any other test vars in here
 	testing: {
