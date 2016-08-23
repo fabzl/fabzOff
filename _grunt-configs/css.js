@@ -3,7 +3,6 @@ module.exports.tasks = {
 	/**
 	 * Sass compilation using grunt-sass
 	 * https://github.com/sindresorhus/grunt-sass
-	 * Includes fabzoff.scss and fabzoff-old-ie.scss by default
 	 */
 	sass: {
 		fabzoff: {

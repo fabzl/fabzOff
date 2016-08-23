@@ -151,7 +151,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('travis', [
 		'jshint:project',
 		'uglify',
-		'sass:kickoff'
+		'sass:fabzoff'
 	]);
 
 	/**
